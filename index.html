@@ -11,9 +11,12 @@
             <!-- <div class="image" style="background-color: #94b36d; height: 100px; width: 100px;">
                 <div style="color: #1a1c11;">ACCENTURE</span>
             </div> -->
+            
             <span id="text-area">
-                
-            </span>
+              <form name="form" >
+                <input class="text-area"  type="" name="textview">
+                </form>       
+                   </span>
             <!-- <img class="image" src="https://i.pinimg.com/originals/e5/0c/c6/e50cc6fce3321a71d03526429c7b9c00.jpg" width="100px" alt=""> -->
             <div class="middle-btn"></div>
             <div class="call-btn">C</div>
@@ -23,35 +26,42 @@
         
           <div class="buttons">
             <div class="button-row1">
-                <div class="btns btn-1" data-number="1">1</div>
-                <div class="btns btn-2" data-number="2">2</div>
-                <div class="btns btn-3" data-number="3">3</div>
+                <input class="btns btn-1" type="button" value="1" onclick="insert(1)"/>
+                <input class="btns btn-2" type="button" value="2" onclick="insert(2)"/>
+                <input class="btns btn-3" type="button" value="3" onclick="insert(3)"/>
             </div>
             
             <div class="button-row2">
-                <div class="btns btn-4" data-number="4">4</div>
-                <div class="btns btn-5" data-number="5">5</div>
-                <div class="btns btn-6" data-number="6">6</div>
+              <input class="btns btn-4" type="button" value="4" onclick="insert(4)"/>
+              <input class="btns btn-5" type="button" value="5" onclick="insert(5)"/>
+              <input class="btns btn-6" type="button" value="6" onclick="insert(6)"/>
             </div>
             
             <div class="button-row3">
-                <div class="btns btn-7" data-number="7">7</div>
-                <div class="btns btn-8" data-number="8">8</div>
-                <div class="btns btn-9" data-number="9">9</div>
+              <input class="btns btn-7" type="button" value="7" onclick="insert(7)"/>
+              <input class="btns btn-8" type="button" value="8" onclick="insert(8)"/>
+              <input class="btns btn-9" type="button" value="9" onclick="insert(9)"/>
             </div>
-            
+
             <div class="button-row4">
-                <div class="btns btn-10" data-number="*">*</div>
-                <div class="btns btn-0" data-number="0">0</div>
-                <div class="btns btn-12" data-number="#">#</div>
-            </div>
+              <input class="btns btn-10" type="button" value="*" onclick="insert('*')"/>
+              <input class="btns btn-0" type="button" value="0" onclick="insert(0)"/>
+              <input class="btns btn-12" type="button" value="#" onclick="insert('#')"/>
+          </div>
+
+            
 
           </div>
         </div>
 
+        
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script>
 
+function insert(num){
+	document.form.textview.value = document.form.textview.value+num
+}
+/*
             $(document).ready(function() {
 
                 //Clique no botão de enter
@@ -88,7 +98,7 @@
 
             }
 
-        
+        */
 
         </script>
     </body>
