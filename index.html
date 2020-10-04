@@ -12,11 +12,8 @@
                 <div style="color: #1a1c11;">ACCENTURE</span>
             </div> -->
             
-            <span id="text-area">
-              <form name="form" >
-                <input class="text-area"  type="" name="textview">
-                </form>       
-                   </span>
+            <span id="text-area"> 
+            </span>
             <!-- <img class="image" src="https://i.pinimg.com/originals/e5/0c/c6/e50cc6fce3321a71d03526429c7b9c00.jpg" width="100px" alt=""> -->
             <div class="middle-btn"></div>
             <div class="call-btn">C</div>
@@ -58,47 +55,48 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script>
 
-function insert(num){
-	document.form.textview.value = document.form.textview.value+num
-}
-/*
+        function insert(num){
+            // document.textview.text = document.textview.value+num
+            const screen = $('#text-area');
+            
+            if(sessionStorage.getItem('number') != num) {
+                sessionStorage.setItem('number', num)
+                sessionStorage.setItem('total', 1)
+            } else {
+                sessionStorage.setItem('total', +sessionStorage.getItem('total') + 1);
+            }
+
+        }
+
+        
+
             $(document).ready(function() {
 
                 //Clique no botão de enter
                 $(".middle-btn").on('click', function() {
-                    console.log("clicou no botão");
+                    submitRequest();
                 });
 
             });
 
             //
             function submitRequest() {
-                const data = {
-                            'number': 2,
-                            'total': 4
-                            }
-                // $.ajax({
-                //     url: 'http://localhost:8002',
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type':'application/json'
-                //     },
-                //     dataType: 'json',
-                //     data: {
-                //         'number': 2,
-                //         'total': 4
-                //     },
-                //     success: function (result) {
-                //         console.log('success', result);
-                //     },
-                //     error: function(result) {
-                //         console.log('error', result);
-                //     }
-                // });
+                const dados = {
+                    'number': sessionStorage.getItem('number'),
+                    'total': sessionStorage.getItem('total')
+                }
 
+                console.log(dados);
+
+                var myInit = { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(dados) };
+
+                fetch("http://localhost:8002", myInit).then(function(result) {
+                    return result.json();
+                }).then(function(result) {
+                    $('#text-area').text($('#text-area').text() + result.msg);
+                });
             }
 
-        */
 
         </script>
     </body>
