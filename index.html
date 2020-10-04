@@ -6,31 +6,90 @@
     </head>
     <body> 
         <div class="container">
-          <div class="screen"><span>NOKIA</span>
-            <img class="image" src="https://i.pinimg.com/originals/e5/0c/c6/e50cc6fce3321a71d03526429c7b9c00.jpg" width="100px" alt="">
+
+        <div class="screen" ><span>NOKIA</span>
+            <!-- <div class="image" style="background-color: #94b36d; height: 100px; width: 100px;">
+                <div style="color: #1a1c11;">ACCENTURE</span>
+            </div> -->
+            <span id="text-area">
+                
+            </span>
+            <!-- <img class="image" src="https://i.pinimg.com/originals/e5/0c/c6/e50cc6fce3321a71d03526429c7b9c00.jpg" width="100px" alt=""> -->
             <div class="middle-btn"></div>
             <div class="call-btn">C</div>
             <div class="chevrons">       
              </div>
-          </div>
+        </div>
+        
           <div class="buttons">
             <div class="button-row1">
-            <div class="btns btn-1">1</div>
-            <div class="btns btn-2">2</div>
-            <div class="btns btn-3">3</div></div>
+                <div class="btns btn-1" data-number="1">1</div>
+                <div class="btns btn-2" data-number="2">2</div>
+                <div class="btns btn-3" data-number="3">3</div>
+            </div>
+            
             <div class="button-row2">
-            <div class="btns btn-4">4</div>
-            <div class="btns btn-5">5</div>
-              <div class="btns btn-6">6</div></div>
+                <div class="btns btn-4" data-number="4">4</div>
+                <div class="btns btn-5" data-number="5">5</div>
+                <div class="btns btn-6" data-number="6">6</div>
+            </div>
+            
             <div class="button-row3">
-            <div class="btns btn-7">7</div>
-            <div class="btns btn-8">8</div>
-              <div class="btns btn-9">9</div></div>
+                <div class="btns btn-7" data-number="7">7</div>
+                <div class="btns btn-8" data-number="8">8</div>
+                <div class="btns btn-9" data-number="9">9</div>
+            </div>
+            
             <div class="button-row4">
-            <div class="btns btn-10">*</div>
-            <div class="btns btn-0">0</div>
-              <div class="btns btn-12">#</div></div>
+                <div class="btns btn-10" data-number="*">*</div>
+                <div class="btns btn-0" data-number="0">0</div>
+                <div class="btns btn-12" data-number="#">#</div>
+            </div>
+
           </div>
         </div>
-      </body>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>
+
+            $(document).ready(function() {
+
+                //Clique no botão de enter
+                $(".middle-btn").on('click', function() {
+                    console.log("clicou no botão");
+                });
+
+            });
+
+            //
+            function submitRequest() {
+                const data = {
+                            'number': 2,
+                            'total': 4
+                            }
+                // $.ajax({
+                //     url: 'http://localhost:8002',
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type':'application/json'
+                //     },
+                //     dataType: 'json',
+                //     data: {
+                //         'number': 2,
+                //         'total': 4
+                //     },
+                //     success: function (result) {
+                //         console.log('success', result);
+                //     },
+                //     error: function(result) {
+                //         console.log('error', result);
+                //     }
+                // });
+
+            }
+
+        
+
+        </script>
+    </body>
 </html>
